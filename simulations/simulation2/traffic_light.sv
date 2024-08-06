@@ -29,8 +29,8 @@ typedef enum  { idle_st, red_st, yellow_st, yellowShortcut_st, green_st, flashin
 sm_type current_state;
 sm_type next_state;
 
-always_ff @(posedge clk, posedge rst) begin
-    if (rst == 1'b1) begin
+always_ff @(posedge clk, posedge reset) begin
+    if (reset == 1'b1) begin
         current_state <= idle_st;
     end
     else begin
@@ -48,9 +48,10 @@ always_comb begin
     case (current_state)
     idle_st: begin
         if (start == 1'b1) begin
+            next_state = red_st;
             L_out = 2'b01;
             t_start = 1'b1;
-            L_out = 5'd21;
+            L_out = RED_DURATION;
             next_state = red_st;
         end
     end
@@ -59,13 +60,13 @@ always_comb begin
             next_state = yellow_st;
             L_out = 2'b10;
             t_start = 1'b1;
-            L_out = 5'd3;
+            L_out = YELLOW_DURATION;
         end
         else begin
             next_state = current_state;
             L_out = 2'b01;
             t_start = 1'b0;
-            L_out = 5'd21;
+            L_out = RED_DURATION;
         end
     end
     yellow_st: begin
@@ -73,13 +74,13 @@ always_comb begin
             next_state = yellow_st;
             L_out = 2'b11;
             t_start = 1'b1;
-            L_out = 5'd26;
+            L_out = GREEN_DURATION;
         end
         else begin
             next_state = current_state;
             L_out = 2'b010;
             t_start = 1'b0;
-            L_out = 5'd3;
+            L_out = YELLOW_DURATION;
         end
     end
     green_st: begin
@@ -87,13 +88,13 @@ always_comb begin
             next_state = flashing_st;
             L_out = 2'b00;
             t_start = 1'b0;
-            L_out = 5'd26;
+            L_out = GREEN_DURATION;
         end
         else begin
             next_state = current_state;
             L_out = 2'b011;
             t_start = 1'b0;
-            L_out = 5'd26;
+            L_out = GREEN_DURATION;
         end
     end
     flashing_st: begin
@@ -101,13 +102,13 @@ always_comb begin
             next_state = yellowShortcut_st;
             L_out = 2'b10;
             t_start = 1'b1;
-            L_out = 5'd3;
+            L_out = YELLOW_DURATION;
         end
         else begin
             next_state = green_st;
             L_out = 2'b011;
             t_start = 1'b0;
-            L_out = 5'd26;
+            L_out = GREEN_DURATION;
         end
     end
     yellowShortcut_st: begin
@@ -115,13 +116,13 @@ always_comb begin
             next_state = red_st;
             L_out = 2'b01;
             t_start = 1'b1;
-            L_out = 5'd21;
+            L_out = RED_DURATION;
         end
         else begin
             next_state = current_state;
             L_out = 2'b010;
             t_start = 1'b0;
-            L_out = 5'd3;
+            L_out = YELLOW_DURATION;
         end
     end
 end
