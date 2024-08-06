@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/urikh/OneDrive/Technion/semester2/Numerical-systems-044252/simulations/simulation2/part1
+vtimer
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1722961231
+!i10b 1
+!s100 U^bL:9kHM`WGGFA74PCo;3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IP@hOM>9i]9GzIJh`?G[7:3
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1722960941
+8timer.sv
+Ftimer.sv
+!i122 8
+L0 3 42
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1722961231.000000
+!s107 traffic_system_tb.sv|traffic_system.sv|traffic_light.sv|timer.sv|
+Z7 !s90 -reportprogress|300|timer.sv|traffic_light.sv|traffic_system.sv|traffic_system_tb.sv|
+!i113 1
+Z8 tCvgOpt 0
+vtraffic_light
+R1
+R2
+!i10b 1
+!s100 jU4]YJOAS`XDkYPdK6LP10
+R3
+IO_]a7BkiDa><??<l][iJn2
+R4
+S1
+R0
+w1722961217
+8traffic_light.sv
+Ftraffic_light.sv
+!i122 8
+L0 3 129
+R5
+r1
+!s85 0
+31
+R6
+Z9 !s107 traffic_system_tb.sv|traffic_system.sv|traffic_light.sv|timer.sv|
+R7
+!i113 1
+R8
+vtraffic_system
+R1
+R2
+!i10b 1
+!s100 LoOacGd;oDbWQzAlY<JQn0
+R3
+IkZ;jKF?9EN]=mEzh``Tko1
+R4
+S1
+R0
+w1722957957
+8traffic_system.sv
+Ftraffic_system.sv
+!i122 8
+L0 2 46
+R5
+r1
+!s85 0
+31
+R6
+R9
+R7
+!i113 1
+R8
+vtraffic_system_tb
+R1
+R2
+!i10b 1
+!s100 T?IOgNAP@X4Q@lH6O`@zK2
+R3
+IVMHS@MWbk9Q@fn=VNW`>@2
+R4
+S1
+R0
+w1722960294
+8traffic_system_tb.sv
+Ftraffic_system_tb.sv
+!i122 8
+L0 3 40
+R5
+r1
+!s85 0
+31
+R6
+R9
+R7
+!i113 1
+R8

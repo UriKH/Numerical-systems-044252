@@ -13,7 +13,8 @@ module traffic_system(
 // Put your code here
 // ------------------
 
-    logic t_start, t_length, t_flicker, t_done;
+    logic[4:0] t_length;
+    logic t_start, t_flicker, t_done;
 
     timer my_timer(
         .clk(clk),
@@ -40,8 +41,7 @@ module traffic_system(
         .t_start(t_start),
         .t_length(t_length),
         .L_out(L_out)
-    );    
-);
+    );
 
 // end of your code
 endmodule

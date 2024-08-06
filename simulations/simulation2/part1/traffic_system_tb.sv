@@ -8,7 +8,7 @@ module traffic_system_tb;
 
     // Put your code here
     // ------------------
-    logic out;
+    logic[1:0] out;
 
     traffic_system system(
         .clk(clk),
@@ -19,14 +19,24 @@ module traffic_system_tb;
 
     initial begin
         clk = 0;
+        reset = 1'b0;
+        start = 1'b0;
+
+        #5 // 5 times Tclk
         reset = 1;
-        start = 1;
-        #2
+
+        #5
         reset = 0;
+
+        #5 // 5 times Tclk
+        start = 1'b1;
+
+        #10 // 10 times Tclk
+        start = 1'b0;
     end
 
     always begin
-        #2 clk = ~clk;
+        #1 clk = ~clk;
     end
 // End of your code
 endmodule
