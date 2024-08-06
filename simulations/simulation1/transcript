@@ -1,0 +1,9 @@
+clear
+# invalid command name "clear"
+clc
+# invalid command name "clc"
+cls
+# 
+cls
+# 
+cd "C:/Users/urikh/OneDrive/Technion/semester2/Numerical systems 044252/simulations/simulation1"

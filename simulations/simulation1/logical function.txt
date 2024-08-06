@@ -1,0 +1,4 @@
+mux2:
+f(a=d0, b=d1, s=sel) = (((a nand (s nand s)) nand (a nand (s nand s))) or ((b nand s) nand (b nand s)))
+
+fas:
