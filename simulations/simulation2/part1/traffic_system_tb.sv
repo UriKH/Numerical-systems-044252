@@ -19,20 +19,17 @@ module traffic_system_tb;
 
     initial begin
         clk = 0;
-        reset = 1'b0;
-        start = 1'b0;
-
-        #5 // 5 times Tclk
         reset = 1;
+        start = 0;
 
         #5
         reset = 0;
 
         #5 // 5 times Tclk
-        start = 1'b1;
+        start = 1;
 
         #10 // 10 times Tclk
-        start = 1'b0;
+        start = 0;
     end
 
     always begin

@@ -11,7 +11,7 @@ cModel Technology
 Z0 dC:/Users/urikh/OneDrive/Technion/semester2/Numerical-systems-044252/simulations/simulation2/part1
 vtimer
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1722961231
+Z2 !s110 1722961565
 !i10b 1
 !s100 U^bL:9kHM`WGGFA74PCo;3
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -19,16 +19,16 @@ IP@hOM>9i]9GzIJh`?G[7:3
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1722960941
+w1722961439
 8timer.sv
 Ftimer.sv
-!i122 8
+!i122 9
 L0 3 42
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1722961231.000000
+Z6 !s108 1722961565.000000
 !s107 traffic_system_tb.sv|traffic_system.sv|traffic_light.sv|timer.sv|
 Z7 !s90 -reportprogress|300|timer.sv|traffic_light.sv|traffic_system.sv|traffic_system_tb.sv|
 !i113 1
@@ -46,7 +46,7 @@ R0
 w1722961217
 8traffic_light.sv
 Ftraffic_light.sv
-!i122 8
+!i122 9
 L0 3 129
 R5
 r1
@@ -70,7 +70,7 @@ R0
 w1722957957
 8traffic_system.sv
 Ftraffic_system.sv
-!i122 8
+!i122 9
 L0 2 46
 R5
 r1
@@ -85,17 +85,17 @@ vtraffic_system_tb
 R1
 R2
 !i10b 1
-!s100 T?IOgNAP@X4Q@lH6O`@zK2
+!s100 D9>o7oO7SN5OFTch>GfF30
 R3
-IVMHS@MWbk9Q@fn=VNW`>@2
+IekDmGV=K?8[JIGO[kc1Ho1
 R4
 S1
 R0
-w1722960294
+w1722961558
 8traffic_system_tb.sv
 Ftraffic_system_tb.sv
-!i122 8
-L0 3 40
+!i122 9
+L0 3 37
 R5
 r1
 !s85 0
