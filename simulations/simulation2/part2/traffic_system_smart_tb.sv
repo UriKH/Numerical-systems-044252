@@ -25,11 +25,9 @@ module traffic_system_smart_tb;
         reset = 1;
         start = 0;
 
-
         #10
         reset = 0;
         start = 1;
-
 
         #10
         start = 0;
@@ -40,9 +38,8 @@ module traffic_system_smart_tb;
         car_present = 1;
         person_present = 0;
 
-
-
-
+        #10
+        car_present = 0;
     end
 
     always begin

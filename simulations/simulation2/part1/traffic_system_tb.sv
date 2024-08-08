@@ -20,15 +20,15 @@ module traffic_system_tb;
     initial begin
         clk = 0;
         reset = 1;
+
+        #10
+        reset = 0;
         start = 0;
 
         #5
-        reset = 0;
-
-        #5 // 5 times Tclk
         start = 1;
 
-        #10 // 10 times Tclk
+        #10
         start = 0;
     end
 
