@@ -21,14 +21,14 @@ module traffic_system_tb;
         clk = 0;
         reset = 1;
 
-        #10
+        #10 // 5 clk
         reset = 0;
         start = 0;
 
-        #5
+        #5 // 5 t units
         start = 1;
 
-        #10
+        #10 // 10 t units
         start = 0;
     end
 

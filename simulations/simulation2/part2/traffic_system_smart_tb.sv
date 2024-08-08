@@ -25,20 +25,20 @@ module traffic_system_smart_tb;
         reset = 1;
         start = 0;
 
-        #10
+        #10 // 5 clk
         reset = 0;
         start = 1;
 
-        #10
+        #10 // 10 units
         start = 0;
         car_present = 0;
         person_present = 1;
 
-        #5
+        #5 // 5 units
         car_present = 1;
         person_present = 0;
 
-        #10
+        #10 // wait until green
         car_present = 0;
     end
 
