@@ -9,6 +9,46 @@ module traffic_system_smart_tb;
 
 // Put your code here
 // ------------------
+    logic[1:0] out;
+
+    traffic_system_smart system(
+        .clk(clk),
+        .reset(reset),
+        .start(start),
+        .L_out(out),
+        .person_present(person_present),
+        .car_present(car_present)
+    );
+
+    initial begin
+        clk = 0;
+        reset = 1;
+        start = 0;
+
+
+        #10
+        reset = 0;
+        start = 1;
+
+
+        #10
+        start = 0;
+        car_present = 0;
+        person_present = 1;
+
+        #5
+        car_present = 1;
+        person_present = 0;
+
+
+
+
+    end
+
+    always begin
+        #1 clk = ~clk;
+    end
+
 
 // End of your code
 endmodule
