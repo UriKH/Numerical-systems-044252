@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/urikh/OneDrive/Technion/semester2/Numerical-systems-044252/simulations/simulation2/part2
+vtimer_smart
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1723218760
+!i10b 1
+!s100 4bETZfK2[BPjHn_@@d71R2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IEYGNEZ7Ui3@ME_>]WD6ka1
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1723218645
+8timer_smart.sv
+Ftimer_smart.sv
+!i122 0
+L0 3 47
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1723218760.000000
+!s107 traffic_system_smart_tb.sv|traffic_system_smart.sv|traffic_light_smart.sv|timer_smart.sv|
+Z7 !s90 -reportprogress|300|timer_smart.sv|traffic_light_smart.sv|traffic_system_smart.sv|traffic_system_smart_tb.sv|
+!i113 1
+Z8 tCvgOpt 0
+vtraffic_light_smart
+R1
+R2
+!i10b 1
+!s100 j6:85`a3@4jGo^:Q^5:`31
+R3
+I5inV71<nI;^Cc]f?9W`9f2
+R4
+S1
+R0
+Z9 w1723105009
+8traffic_light_smart.sv
+Ftraffic_light_smart.sv
+!i122 0
+L0 3 160
+R5
+r1
+!s85 0
+31
+R6
+Z10 !s107 traffic_system_smart_tb.sv|traffic_system_smart.sv|traffic_light_smart.sv|timer_smart.sv|
+R7
+!i113 1
+R8
+vtraffic_system_smart
+R1
+R2
+!i10b 1
+!s100 c[8LW]6`gm=9e0X2<mXU_2
+R3
+IEcc=7D]Nj>ooim95B5i;S3
+R4
+S1
+R0
+R9
+8traffic_system_smart.sv
+Ftraffic_system_smart.sv
+!i122 0
+L0 2 52
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+R8
+vtraffic_system_smart_tb
+R1
+R2
+!i10b 1
+!s100 0<HoHbkQBi:0jBTJUkNYH0
+R3
+IAE?]`2bH=aUA:;KJG3Lzm2
+R4
+S1
+R0
+w1723137048
+8traffic_system_smart_tb.sv
+Ftraffic_system_smart_tb.sv
+!i122 0
+L0 2 50
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+R8

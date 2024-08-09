@@ -17,7 +17,7 @@ module timer_smart(
 
     always_ff @(posedge clk, posedge reset) begin
         if (reset == 1) begin
-            counter <= 0;
+            counter <= 1;
             t_flicker <= 0;
             t_done <= 0;
         end
