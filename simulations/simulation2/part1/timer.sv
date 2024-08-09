@@ -17,7 +17,7 @@ module timer(
 
     always_ff @(posedge clk, posedge reset) begin
         if (reset == 1) begin
-            counter <= 0;
+            counter <= 1;
             t_flicker <= 0;
             t_done <= 0;
         end
@@ -26,11 +26,13 @@ module timer(
                 counter <= 1;
                 t_done <= 0;
                 t_flicker <= 0;
+
                 if (t_length < 5 || counter == t_length - 6) begin
                     t_flicker <= 1;
                 end
             end else if (counter < t_length) begin
                 counter <= counter + 1;
+                
                 if (t_length < 5 || counter == t_length - 6) begin
                     t_flicker <= 1;
                 end
