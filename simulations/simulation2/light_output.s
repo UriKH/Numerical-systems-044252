@@ -43,15 +43,16 @@ loop:   # Check if loop counter is 0
 # or <Output>, <Input>, <Input>
 # and <Output>, <Input>, <Input>
 # not <Output>, <Input>
-
+        not     t3, t3
+        and     a1, t3, t4
 
 # END OF YOUR CODE
 ###############
 
 	#Isolate lower bit 
-	andi a1, a1, 1 
+	andi    a1, a1, 1 
         #Add to final output register
-        add    a0, a0, a1
+        add     a0, a0, a1
         # Decrement loop counter
         addi    t2, t2, -1
 
