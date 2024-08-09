@@ -24,10 +24,12 @@ module timer(
         else begin
             if (t_start == 1) begin
                 counter <= 1;
-                t_flicker <= 0;
                 t_done <= 0;
-            end 
-            else if (counter < t_length) begin
+                t_flicker <= 0;
+                if (t_length < 5 || counter == t_length - 6) begin
+                    t_flicker <= 1;
+                end
+            end else if (counter < t_length) begin
                 counter <= counter + 1;
                 if (t_length < 5 || counter == t_length - 6) begin
                     t_flicker <= 1;
@@ -38,7 +40,5 @@ module timer(
             end
         end
     end
-
-
 // End of your code
 endmodule
