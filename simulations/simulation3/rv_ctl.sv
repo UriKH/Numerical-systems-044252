@@ -19,9 +19,9 @@
      output logic irwrite,
      output logic [1:0] wbsel,
      output logic regwen,
-     output logic [1:0] immsel,
-     output logic asel,
-     output logic bsel,
+     output logic [2:0] immsel,
+     output logic [1:0]asel,
+     output logic [1:0]bsel,
      output logic [3:0] alusel,
      output logic mdrwrite,
      
@@ -45,10 +45,11 @@
     LW_MEM      = 3,
     LW_WB       = 4,
     SW_MEM      = 5,
-    RTYPE_ALU   = 6,
-    RTYPE_WB    = 7,
-    BEQ_EXEC    = 8,
-    JAL_EXEC    = 9
+    IRTYPE_ALU  = 6,
+    ITYPE_ALU   = 7,
+    IRTYPE_WB   = 8,
+    BEQ_EXEC    = 9,
+    JAL_EXEC    = 10
 	} sm_type;
 
 sm_type current,next;
@@ -74,7 +75,8 @@ sm_type current,next;
             casex (opcode_funct3)
                 LW:     next = LSW_ADDR;
                 SW:     next = LSW_ADDR;
-                ALU:    next = RTYPE_ALU;
+                ALU:    next = IRTYPE_ALU;
+                ADDI:   next = IRTYPE_ALU;
                 BEQ:    next = BEQ_EXEC;
                 JAL:    next = JAL_EXEC;
                 // For unimplemented instructions do nothing
@@ -95,10 +97,18 @@ sm_type current,next;
             next = FETCH;
         SW_MEM:
             next = FETCH;
-        RTYPE_ALU:
-            next = RTYPE_WB;
-        RTYPE_WB:
-            next = FETCH;
+        IRTYPE_ALU: begin
+            case (opcode_funct3)
+                ALU:    next = IRTYPE_WB;
+                ADDI:   next = ITYPE_ALU;
+                default:next = IRTYPE_WB;
+            endcase
+        end
+            // next = RTYPE_WB;
+        ITYPE_ALU:
+            next = IRTYPE_WB;
+        IRTYPE_WB:
+            next = FETCH; 
         BEQ_EXEC:
             next = FETCH;
         JAL_EXEC:
@@ -154,12 +164,27 @@ sm_type current,next;
         end
         SW_MEM:
             memrw       = 1'b1;
-        RTYPE_ALU: begin
-            asel        = ALUA_REG;
-            bsel        = ALUB_REG;
-            alusel      = {instr[14:12],instr[30]}; // Funct3 and INST[30]
+        IRTYPE_ALU: begin
+            case (opcode_funct3)
+                ADDI: begin
+                    alusel      = ALU_ADD;
+                    immsel      = IMM_I;
+                    asel        = ALUA_REG;
+                    bsel        = ALUB_IMM;
+                end
+                default: begin // ALU type
+                    asel        = ALUA_REG;
+                    bsel        = ALUB_REG;
+                    alusel      = {instr[14:12],instr[30]}; // Funct3 and INST[30]
+                end
+            endcase
         end
-        RTYPE_WB: begin
+        ITYPE_ALU: begin
+            asel        = ALUA_ALUOUT;
+            bsel        = ALUB_MASK;
+            alusel      = ALU_XOR;
+        end
+        IRTYPE_WB: begin
             wbsel       = WB_ALUOUT;
             regwen      = 1'b1;
         end
