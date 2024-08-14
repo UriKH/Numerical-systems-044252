@@ -126,8 +126,6 @@
 
  // ALU input A
  logic [DPWIDTH-1:0] alu_a;
- //  assign alu_a = (asel == ALUA_REG) ? a : pcc;
- //  ADDED
  always_comb 
  begin
      case (asel)
@@ -139,8 +137,6 @@
 
  // ALU input A
  logic [DPWIDTH-1:0] alu_b;
- //  assign alu_b = (bsel == ALUB_REG) ? b : imm;
- //  ADDED
  always_comb
  begin
      case (bsel)

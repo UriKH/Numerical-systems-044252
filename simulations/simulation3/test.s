@@ -2,7 +2,7 @@
 main:   # Put your code here
         # testing ADDI
         lw              t5, 8(x0)
-        addi            t4, t5, 0x12
+        addi            t4, t5, 12
         sw              t4, 16(x0)
 
         # continue to loop

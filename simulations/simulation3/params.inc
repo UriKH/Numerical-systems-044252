@@ -8,7 +8,6 @@
     ALU     = 10'b0110011_xxx,
     BEQ     = 10'b1100011_000,
     JAL     = 10'b1101111_xxx,
-    // ADDED
     ADDI    = 10'b0010011_000;
 
  // PC selector
@@ -18,11 +17,6 @@
 
  // Immediate selector
  localparam
-   //  IMM_B   = 2'b00,
-   //  IMM_J   = 2'b01,
-   //  IMM_S   = 2'b10,
-   //  IMM_L   = 2'b11;
-    // ADDED
     IMM_B   = 3'b000,
     IMM_J   = 3'b001,
     IMM_S   = 3'b010,
