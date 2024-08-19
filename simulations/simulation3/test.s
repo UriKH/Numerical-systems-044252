@@ -1,5 +1,5 @@
 .text
-main:   # Put your code here
+main:
         # testing ADDI
         lw              t5, 8(x0)
         addi            t4, t5, 12
